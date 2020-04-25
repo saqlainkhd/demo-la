@@ -20,12 +20,12 @@
                         <form action="{{ route('questions.store') }}" method="post">
                                 @csrf
 
-                                <div class="form-group">
+                                <div class="form-group ">
                                     <label for="question-title">
                                         Question Title
                                     </label>
-                                    <input type="text" name="title" id="question-title" class="form-control {{ $errors->has('title') ? 'is-inavlid' : '' }}" />
-
+                                <input type="text" name="title" value="{{ old('title') }}" id="question-title" class="form-control {{ $errors->has('title') ? 'is-inavlid' : '' }}" />
+                                  
                                     @if($errors->has('title'))
                                         <div class="invalid-feedback">
                                             <strong>
@@ -40,8 +40,8 @@
                                     <label for="question-body">
                                        Explain your Question
                                     </label>
-                                    <textarea name="body" id="question-body" cols="30" rows="10" class="form-control {{ $errors->has('body') ? 'is-inavlid' : '' }}" ></textarea>
-
+                                    <textarea name="body" id="question-body" cols="30" rows="10" class="form-control {{ $errors->has('body') ? 'is-inavlid' : '' }}" >{{ old('body') }}</textarea>
+                                    
                                     @if($errors->has('body'))
                                     <div class="invalid-feedback">
                                         <strong>

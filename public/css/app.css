@@ -33,3 +33,11 @@
   margin-top: 10px;
 }
 
+.invalid-feedback {
+  display: inline !important;
+}
+
+.is-inavlid {
+  border: 1px solid #dc3545 !important;
+}
+
